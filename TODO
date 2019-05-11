@@ -1,0 +1,69 @@
+Umbra
+=====
+
+AI is the creation of darkness, functions and logic that exist beyond the
+vision and comprehension of human minds. That is what an umbra is, the
+darkest spot of a shadow. This is literally the means to create darkness.
+
+
+Workflow
+========
+
+The platform should allow for plugins to be added that create a super simple way
+to make AI routines that can be easily reproduced and executed.
+
+The umbra command allows for modules to be executed via the CLI that will
+run AI routines that are part of the plugins.
+
+Components
+==========
+
+We need to have a few components.
+
+Common Utils
+============
+
+Things like basic, reused, data transforms. Like dynamicaly creating
+word maps from input data words.
+
+Models
+======
+
+A way to create models that can accept high level data and spit back results
+
+Data Managers
+=============
+
+A statndard way to express a format of input data and then transform it into
+data for a model
+
+Persistence
+===========
+
+A system to allow for data structures to be registed so that they become
+persistent across executions of the system. Like training data and word maps etc.
+
+Ingress
+=======
+
+A system to allow for easily attatching onto inbound data streams and sources
+
+Egress
+======
+
+A system used to push findings out once they are found
+
+Generate
+========
+
+A place to load up plugins that are used to generate datasets
+
+System Flow
+===========
+
+The system should be attatchable from multiple means, but basically the input data
+is filtered and then passed to a model which creates egress data.
+
+The whole system should be configurable via yaml/json/toml so that you can specify
+input source, data constructs, and putput systems all from configuration
+
