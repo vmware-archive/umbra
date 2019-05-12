@@ -1,0 +1,12 @@
+# Sample configuration file for figuring out the configuration
+
+# Option 1
+models:
+    input:
+        salt_events:
+            matches:
+                shell_model: 'salt/beacons/*/sh/*'
+                network_model: 'salt/beacons/*/net'
+    data:
+        salt_events:
+            shell_model

@@ -9,6 +9,7 @@ async def run(hub, name, model):
     has either been killed or exhausted.
     '''
     hub.umbra.QUE[f'input_{name}'] = asyncio.Queue()
+    hub.umbra.EVENTS[f'input_{name}'] = asyncio.Event()
     itype = model['input']['type']
     ret = hub.tools.ref.last('input.{itype}.gather')(name, model)
     if isinstance(ret, types.AsyncGeneratorType):
@@ -24,3 +25,4 @@ async def run(hub, name, model):
         await hub.umbra.QUE[f'input_{name}'].put(msg)
     else:
         await hub.umbra.QUE[f'input_{name}'].put(ret)
+    hub.umbra.EVENTS[f'input_{name}'].set()
