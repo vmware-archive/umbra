@@ -1,17 +1,24 @@
 CLI_CONFIG = {
-    'models': {
-        'default': {},
-        'render': 'yaml',
-        'help': 'Define a model to use, this is typically done in a configuration file',
+    'flows_dir': {
+        'options': ['-f'],
+        'default': '/etc/umbra/flows',
+        'help': 'The location used for storing flow configuration files'
         },
-    'config_dir': {
-        'default': '/etc/umbra',
+    'config': {
+        'options': ['-c'],
+        'default': '/etc/umbra/umbra.conf',
         'help': 'The location to store umbra configuration files',
         },
     }
 CONFIG = {
-    'config_dir': {
-        'default': '/etc/umbra',
+    'flows_dir': {
+        'options': ['-f'],
+        'default': '/etc/umbra/flows',
+        'help': 'The location used for storing flow configuration files'
+        },
+    'config': {
+        'options': ['-c'],
+        'default': '/etc/umbra/umbra.conf',
         'help': 'The location to store umbra configuration files',
         },
     }
