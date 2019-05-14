@@ -15,6 +15,6 @@ async def flow(hub, pipe, config):
     '''
     mod = config['model']
     while True:
-        data = await hub.umbra.MODELS[pipe].get()
+        data = await hub.UP[pipe]['model'].get()
         flags = await hub.tools.ref.last(f'models.{mod}.run')(pipe, data)
-        await hub.umbra.EGRESS[pipe].put(flags)
+        await hub.UP[pipe]['egress'].put(flags)

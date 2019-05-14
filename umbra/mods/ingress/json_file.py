@@ -11,4 +11,4 @@ async def run(hub, conf):
             with open(fn, 'r') as rfh:
                 data = json.dumps(rfh.read())
             # TODO: These functions should return and should not need to interact with the pipes
-            await hub.umbra.PIPES[pipe].put(data)
+            await hub.UP[pipe]['data'].put(data)

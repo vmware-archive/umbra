@@ -8,6 +8,10 @@ async def run(hub, ingress):
     '''
     for key, conf in ingress.items():
         for pipe in conf:
-            if pipe not in hub.umbra.PIPES:
-                hub.umbra.PIPES[pipe] = asyncio.Queue()
+            if pipe not in hub.UP:
+                hub.UP[pipe] = {}
+                hub.UP[pipe]['in'] = asyncio.Queue()
+                hub.UP[pipe]['data'] = asyncio.Queue()
+                hub.UP[pipe]['persist'] = {}
+                hub.UP[pipe]['egress'] = asyncio.Queue()
         hub.tools.loop.ensure_future(hub.tools.ref.last(f'ingress.{key}.run')(conf))

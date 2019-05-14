@@ -1,12 +1,22 @@
 # Import python libs
 import asyncio
 
+# Application data flow:
+# Flows saved to hub.umbra.INGRESS and hub.umbra.FLOWS
+# Data pipe saved to hub.UP
+# hub.UP[pipe][in]
+# hub.UP[pipe][data]
+# hub.UP[pipe][model]
+# hub.UP[pipe][persist]
+# hub.UP[pipe][egress]
+
 
 def new(hub):
     hub.tools.conf.integrate(['umbra'], cli='umbra')
-    hub.umbra.PIPES = {}
-    hub.umbra.MODELS = {}
+    hub.UP = {}
     hub.umbra.init.load_subs()
+    hub.flows.init.load()
+    hub.umbra.init.start()
 
 
 def load_subs(hub):
@@ -35,3 +45,4 @@ async def run(hub):
     hub.tools.loop.ensure_future(hub.ingress.init.run(hub.umbra.INGRESS))
     hub.tools.loop.ensure_future(hub.data.init.run(hub.umbra.FLOWS))
     hub.tools.loop.ensure_future(hub.models.init.run(hub.umbra.FLOWS))
+    hub.tools.loop.ensure_future(hub.egress.init.run(hub.umbra.FLOWS))
