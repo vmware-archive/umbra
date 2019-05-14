@@ -43,7 +43,7 @@ def merge(hub, flows):
     '''
     ingress = {}
     r_flows = {}
-    for full, data in flows:
+    for full, data in flows.items():
         for pipe in data:
             for key in data[pipe]['ingress']:
                 if key not in ingress:
@@ -55,5 +55,5 @@ def merge(hub, flows):
                     ingress[key][pipe].append(val)
                 else:
                     ingress[key][pipe].extend(val)
-            r_flows[pipe] = data
+            r_flows[pipe] = data[pipe]
     return ingress, r_flows

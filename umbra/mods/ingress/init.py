@@ -14,4 +14,4 @@ async def run(hub, ingress):
                 hub.UP[pipe]['data'] = asyncio.Queue()
                 hub.UP[pipe]['persist'] = {}
                 hub.UP[pipe]['egress'] = asyncio.Queue()
-        hub.tools.loop.ensure_future(hub.tools.ref.last(f'ingress.{key}.run')(conf))
+        hub.tools.loop.ensure_future(f'ingress.{key}.run', conf)

@@ -5,7 +5,7 @@ async def run(hub, flows):
     hub.models.PIPES = {}
     for pipe in flows:
         hub.models.PIPES[pipe] = {}
-        hub.tools.loop.ensure_future(hub.models.init.flow(pipe, flows[pipe]))
+        hub.tools.loop.ensure_future('models.init.flow', pipe, flows[pipe])
 
 
 async def flow(hub, pipe, config):

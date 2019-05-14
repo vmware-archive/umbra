@@ -3,4 +3,4 @@
 import pop.hub
 
 hub = pop.hub.Hub()
-hub.tools.sub.add('umbra', pypath='umbra.mods.umbra', contracts_pypath='umbra.contracts.umbra', init=True)
+hub.tools.sub.add('umbra', pypath='umbra.mods.umbra', init=True)
