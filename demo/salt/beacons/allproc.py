@@ -15,12 +15,6 @@ try:
 except ImportError:
     HAS_PSUTIL = False
 
-from salt.ext.six.moves import map
-
-# pylint: enable=import-error
-
-log = logging.getLogger(__name__)  # pylint: disable=invalid-name
-
 __virtualname__ = 'allproc'
 
 
