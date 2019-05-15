@@ -16,5 +16,5 @@ async def flow(hub, pipe, config):
     mod = config['model']
     while True:
         data = await hub.UP[pipe]['model'].get()
-        flags = await hub.tools.ref.last(f'models.{mod}.run')(pipe, data)
-        await hub.UP[pipe]['egress'].put(flags)
+        preds = await hub.tools.ref.last(f'models.{mod}.run')(pipe, data)
+        await hub.UP[pipe]['egress'].put({'data': data, 'preds': preds})

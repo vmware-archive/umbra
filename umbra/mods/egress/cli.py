@@ -8,3 +8,4 @@ async def run(hub, pipe, data):
     '''
     for comp in data:
         pprint.pprint(comp)
+    print(len(data))
