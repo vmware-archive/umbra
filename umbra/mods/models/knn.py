@@ -16,7 +16,7 @@ async def run(hub, pipe, data):
     '''
 
     if pipe not in hub.models.knn.COMPS:
-        hub.models.knn.COMPS[pipe] = {'clf': KNN()}
+        hub.models.knn.COMPS[pipe] = {'clf': KNN(contamination=0.01)}
         # TODO: Add persist re-learning
     clf = hub.models.knn.COMPS[pipe]['clf']
     clf.fit(data)
