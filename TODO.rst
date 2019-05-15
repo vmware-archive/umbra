@@ -6,65 +6,31 @@ AI is the creation of darkness, functions and logic that exist beyond the
 vision and comprehension of human minds. That is what an umbra is, the
 darkest spot of a shadow. This is literally the means to create darkness.
 
+Hook into Salt Event Bus
+========================
 
-Workflow
+We need to be able to make a single event bus hook that can stick onto the
+ingress and egress systems with a single bus connector
+
+Training
 ========
 
-The platform should allow for plugins to be added that create a super simple way
-to make AI routines that can be easily reproduced and executed.
+Allow for training data to be passed into the system
 
-The umbra command allows for modules to be executed via the CLI that will
-run AI routines that are part of the plugins.
+Ingress_train
+-------------
 
-Components
-==========
+This will allow for a static training json file to be loaded on first pass
+of the ingress system
 
-We need to have a few components.
+Train Until
+-----------
 
-Common Utils
-============
-
-Things like basic, reused, data transforms. Like dynamicaly creating
-word maps from input data words.
-
-Models
-======
-
-A way to create models that can accept high level data and spit back results
-
-Data Managers
-=============
-
-A statndard way to express a format of input data and then transform it into
-data for a model
+Tell umbra to train for a certian length of time before it starts to make
+decisions
 
 Persistence
 ===========
 
-A system to allow for data structures to be registed so that they become
-persistent across executions of the system. Like training data and word maps etc.
-
-Ingress
-=======
-
-A system to allow for easily attatching onto inbound data streams and sources
-
-Egress
-======
-
-A system used to push findings out once they are found
-
-Generate
-========
-
-A place to load up plugins that are used to generate datasets
-
-System Flow
-===========
-
-The system should be attatchable from multiple means, but basically the input data
-is filtered and then passed to a model which creates egress data.
-
-The whole system should be configurable via yaml/json/toml so that you can specify
-input source, data constructs, and putput systems all from configuration
-
+We need to be able to have a way to take the persistence data out of memory and
+pluggably save it and reload it when the system starts up
