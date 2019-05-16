@@ -9,6 +9,12 @@ CLI_CONFIG = {
         'default': '/etc/umbra/umbra.conf',
         'help': 'The location to store umbra configuration files',
         },
+    'persist': {
+        'options': ['-p'],
+        'default': {'msgpack': {'file': '/var/cache/umbra/data.mp'}},
+        'render': 'yaml',
+        'help': 'Define the persistence system and options',
+        },
     }
 CONFIG = {
     'flows_dir': {
@@ -20,6 +26,12 @@ CONFIG = {
         'options': ['-c'],
         'default': '/etc/umbra/umbra.conf',
         'help': 'The location to store umbra configuration files',
+        },
+    'persist': {
+        'options': ['-p'],
+        'default': {'json': {'file': '/var/cache/umbra/data.json'}},
+        'render': 'yaml',
+        'help': 'Define the persistence system and options',
         },
     }
 GLOBAL = {}

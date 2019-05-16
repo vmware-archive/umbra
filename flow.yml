@@ -1,25 +1,3 @@
-# Sample configuration file for figuring out the configuration of flow files
-
-# Option 1
-ingress:
-    salt_event:
-        - 'shell': 'salt/sh*'
-        - 'net': 'salt/net*'
-data:
-    salt_event:
-        - 'shell'
-        - 'net'
-model:
-    knn:
-        - 'shell'
-    k_means:
-        - 'net'
-egress:
-    salt_event:
-        - 'shell'
-        - 'net'
-
-# Option 2
 shell:
     ingress:
         salt_event: 'salt/sh*'
