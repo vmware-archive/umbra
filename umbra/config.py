@@ -4,6 +4,10 @@ CLI_CONFIG = {
         'default': '/etc/umbra/flows',
         'help': 'The location used for storing flow configuration files'
         },
+    'cache_dir': {
+        'default': '/var/cache/umbra',
+        'help': 'The location for cache files',
+        },
     'config': {
         'options': ['-c'],
         'default': '/etc/umbra/umbra.conf',
@@ -11,8 +15,7 @@ CLI_CONFIG = {
         },
     'persist': {
         'options': ['-p'],
-        'default': {'msgpack': {'file': '/var/cache/umbra/data.mp'}},
-        'render': 'yaml',
+        'default': 'msgpack',
         'help': 'Define the persistence system and options',
         },
     }
@@ -29,9 +32,12 @@ CONFIG = {
         },
     'persist': {
         'options': ['-p'],
-        'default': {'json': {'file': '/var/cache/umbra/data.json'}},
-        'render': 'yaml',
+        'default': 'msgpack',
         'help': 'Define the persistence system and options',
+        },
+    'cache_dir': {
+        'default': '/var/cache/umbra',
+        'help': 'The location for cache files',
         },
     }
 GLOBAL = {}

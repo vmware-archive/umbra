@@ -2,9 +2,7 @@ async def run(hub, flows):
     '''
     Execute the models defined in the given flow
     '''
-    hub.models.PIPES = {}
     for pipe in flows:
-        hub.models.PIPES[pipe] = {}
         hub.tools.loop.ensure_future('models.init.flow', pipe, flows[pipe])
 
 
@@ -17,6 +15,9 @@ async def flow(hub, pipe, config):
     while True:
         data = await hub.UP[pipe]['model'].get()
         train = []
+        import pprint
+        pprint.pprint(hub.P)
+        print(pipe)
         if hub.P[pipe]['first']:
             train = hub.P[pipe]['data']
             hub.P[pipe]['first'] = False

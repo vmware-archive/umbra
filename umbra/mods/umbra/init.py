@@ -43,7 +43,7 @@ async def run(hub):
     '''
     await hub.persist.init.load()
     hub.umbra.INBOUND = asyncio.Queue()
-    hub.tools.loop.ensure_future('ingress.init.run', hub.umbra.INGRESS)
-    hub.tools.loop.ensure_future('data.init.run', hub.umbra.FLOWS)
-    hub.tools.loop.ensure_future('models.init.run', hub.umbra.FLOWS)
-    hub.tools.loop.ensure_future('egress.init.run', hub.umbra.FLOWS)
+    await hub.ingress.init.run(hub.umbra.INGRESS)
+    await hub.data.init.run(hub.umbra.FLOWS)
+    await hub.models.init.run(hub.umbra.FLOWS)
+    await hub.egress.init.run(hub.umbra.FLOWS)
