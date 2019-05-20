@@ -19,7 +19,7 @@ async def load(hub):
         return {}
 
 
-async def dump(hub, data, conf):
+async def dump(hub, data):
     '''
     Dump the persistence running data to disk
     '''

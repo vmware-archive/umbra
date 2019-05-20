@@ -7,7 +7,7 @@ async def load(hub):
     hub.P = await hub.tools.ref.last(f'persist.{p_name}.load')()
     # We need to set the pipe's flag to let the ingestion know to re-train on historic data
     for pipe in hub.P:
-        hub.P['first'] = True
+        hub.P[pipe]['first'] = True
 
 
 async def dump(hub):
