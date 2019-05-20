@@ -11,3 +11,4 @@ net:
     data: salt_event
     model: k_means
     egress: salt_event
+    train_for: 5000

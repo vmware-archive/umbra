@@ -28,18 +28,3 @@ Train Until
 
 Tell umbra to train for a certian length of time before it starts to make
 decisions
-
-Persistence
-===========
-
-We need to be able to have a way to take the persistence data out of memory and
-pluggably save it and reload it when the system starts up
-
-Cleaning
-========
-
-Ingress
--------
-
-Right now the plugins for ingress need to interact with the internal queues, that should
-only be done in the `init.py`

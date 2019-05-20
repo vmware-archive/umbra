@@ -19,5 +19,7 @@ async def run(hub, pipe, data, train):
     clf = hub.models.knn.COMPS[pipe]['clf']
     if train:
         clf.fit(train)
-    clf.fit(data)
-    return clf.predict(data)
+    if data:
+        clf.fit(data)
+        return clf.predict(data)
+    return []
