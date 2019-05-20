@@ -12,7 +12,7 @@ import asyncio
 
 
 def new(hub):
-    hub.tools.conf.integrate(['umbra'], cli='umbra', roots=True)
+    hub.tools.conf.integrate(['umbra'], loader='yaml', cli='umbra', roots=True)
     hub.UP = {}
     hub.umbra.init.load_subs()
     hub.flows.init.load()
