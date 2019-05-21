@@ -43,6 +43,8 @@ def beacon(config):
     procs = set()
     for proc in psutil.process_iter():
         _name = proc.name()
+        if _name.startswith('[') and _name.endswith(']'):
+            continue
         procs.add(_name)
     for name in procs:
         ret.append({'name': name})

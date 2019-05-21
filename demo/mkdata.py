@@ -2,6 +2,7 @@ import faker
 import random
 import json
 import pprint
+import os
 
 USERS = ['thatch', 'frank', 'bob', 'sud', 'mary']
 IDS = ['ragnarok', 'thor', 'odin', 'loki']
@@ -22,13 +23,13 @@ def gen_events(dates, cmds):
 
 def mkdata(size=100000):
     fake = faker.Faker()
-    
+
     dates = fake.time_series('-1000d', precision=1)
 
     ret = []
     cmds = []
     icmds = []
-    with open('/home/thatch/.bash_history', 'r') as rfp:
+    with open(os.path.join(os.path.expanduser('~'), '.bash_history'), 'r') as rfp:
         pcmds = rfp.readlines()
     for cmd in pcmds:
         if ';' in cmd:
