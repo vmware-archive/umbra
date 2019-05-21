@@ -6,7 +6,7 @@ import os
 import sys
 import shutil
 
-from setuptools import setup, Command
+from distutils.core import setup, Command
 
 NAME = 'umbra'
 DESC = ('A system for making the use of AI easily plugged into interfaces')
