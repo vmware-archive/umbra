@@ -6,15 +6,7 @@ import os
 import sys
 import shutil
 
-# SETUPTOOLS WILL NOT BE TOLERATED!!
-# I have made MANY python projects and those idiotic setuptools
-# create pkg_resources deps and unnecessarily muddy up the
-# startup process. They add NO useful features that cannot be
-# easily derived from distutils, which is a clean and reasonable
-# packaging system!
-
-from distutils.core import setup
-from distutils.core import Command
+from setuptools import setup, Command
 
 NAME = 'umbra'
 DESC = ('A system for making the use of AI easily plugged into interfaces')
@@ -58,13 +50,14 @@ def discover_packages():
 setup(name=NAME,
       author='Thomas S Hatch',
       author_email='thatch@saltstack.com',
-      url='umbra.io',
+      url='saltstack.com',
       version=VERSION,
       description=DESC,
       classifiers=[
           'Operating System :: OS Independent',
           'Programming Language :: Python',
           'Programming Language :: Python :: 3.6',
+          'Programming Language :: Python :: 3.7',
           'Development Status :: 5 - Production/Stable',
           ],
       scripts=['scripts/umbra'],
