@@ -55,7 +55,7 @@ def mkdata(size=100000):
 def save():
     ret = mkdata()
     #pprint.pprint(ret)
-    with open('shell_beacon.json', 'w+') as wfp:
+    with open('shell.json', 'w+') as wfp:
         wfp.write(json.dumps(ret))
 
 
