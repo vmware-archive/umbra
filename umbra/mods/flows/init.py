@@ -57,4 +57,5 @@ def merge(hub, flows):
                     ingress[key][pipe].append(val)
                 else:
                     ingress[key][pipe].extend(val)
+                r_flows[pipe] = data[pipe]
     return ingress, r_flows

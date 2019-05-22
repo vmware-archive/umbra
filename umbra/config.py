@@ -18,7 +18,7 @@ CLI_CONFIG = {
         },
     'persist': {
         'options': ['-p'],
-        'default': 'msgpack',
+        'default': '',
         'help': 'Define the persistence system and options',
         },
     }
@@ -39,7 +39,7 @@ CONFIG = {
         },
     'persist': {
         'options': ['-p'],
-        'default': 'msgpack',
+        'default': '',
         'help': 'Define the persistence system and options',
         },
     }

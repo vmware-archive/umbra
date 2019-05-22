@@ -41,7 +41,8 @@ async def run(hub):
     '''
     Start up the flows process
     '''
-    await hub.persist.init.load()
+    if hub.OPT['umbra']['persist']:
+        await hub.persist.init.load()
     hub.umbra.INBOUND = asyncio.Queue()
     await hub.ingress.init.run(hub.umbra.INGRESS)
     await hub.data.init.run(hub.umbra.FLOWS)
