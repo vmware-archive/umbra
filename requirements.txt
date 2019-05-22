@@ -1,2 +1,6 @@
 pop
 pyod
+keras
+keras-applications
+keras-preprocessing
+tensorflow

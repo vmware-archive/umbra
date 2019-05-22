@@ -3,6 +3,7 @@ import random
 import json
 import pprint
 import os
+import sys
 
 USERS = ['thatch', 'frank', 'bob', 'sud', 'mary']
 IDS = ['ragnarok', 'thor', 'odin', 'loki']
@@ -21,7 +22,7 @@ def gen_events(dates, cmds):
     return ret
 
 
-def mkdata(size=100000):
+def mkdata(size=500000):
     fake = faker.Faker()
 
     dates = fake.time_series('-1000d', precision=1)
@@ -53,7 +54,11 @@ def mkdata(size=100000):
     return ret
 
 def save():
-    ret = mkdata()
+    if len(sys.argv) > 1:
+        size = int(sys.argv[1])
+    else:
+        size = 500000
+    ret = mkdata(size)
     #pprint.pprint(ret)
     with open('shell.json', 'w+') as wfp:
         wfp.write(json.dumps(ret))
