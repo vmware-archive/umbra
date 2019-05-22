@@ -2,14 +2,14 @@
 Writing Ingress Plugins
 =======================
 
-Umbra uses the venerable Plugin Oriented Programing paradigmn as it is realized
+Umbra uses the venerable Plugin Oriented Programing paradigm as it is realized
 in the `pop` framework. This means that all of the features of `pop` are
-availiable.
+available.
 
 Making an ingress plugin is easy, just add the plugin to `umbra/mods/ingress`.
 The `ingress` plugin subsystem only takes a single function, `run`. This can be
-a functrion of any type, a generator, a coroutine, and async generator or a
-standard function. The type of function you chose to implement defines how the
+a function of any type, a generator, a coroutine, an async generator or a
+standard function. The type of function you choose to implement defines how the
 ingress system will run. If the ingress system needs to be running continuously
 then an async generator is optimal.
 
@@ -52,4 +52,4 @@ subprocess to stream, as it is often a great way to ingest data.
 
 This example shows how to easily use asyncio subprocess to await lines by line
 feedback and yield the formatted ingestion data. This approach can work with
-virtually and shell program that continuously emits data.
+virtually any shell program that continuously emits data.
