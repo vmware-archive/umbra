@@ -44,5 +44,5 @@ is executed just once, when the module is first loaded. This allows us to set up
 the module's hub namespace. This is what you see when we set `hub.models.knn.COMPS`. This
 allows us to persist things like the `knn` object that we are training.
 
-As you can see, this is an extreamly simple example! Think of the model plugin interface as
+As you can see, this is an extremely simple example! Think of the model plugin interface as
 just a doorway to hook into a larger model!

@@ -2,7 +2,7 @@
 Writing Data Plugins
 ====================
 
-Data plugins are simple, but they do follow a format and expect certian
+Data plugins are simple, but they do follow a format and expect certain
 inputs and outputs. The data functions are executed as new data comes in
 and will be executed over and over again. Unlike, for instance, `ingress`
 plugins that are only executed once to set up the flow of data.
@@ -33,7 +33,7 @@ the `hub` needs to be accepted as the first argument.
             if not hub.P[pipe]['tmap_populated']:
                 for key in event['data']:
                     if not isinstance(event['data'][key], str):
-                        # TODO: Make this able to handle mroe than just strings
+                        # TODO: Make this able to handle more than just strings
                         continue
                     if key == '_stamp':
                         continue
@@ -53,12 +53,12 @@ the `hub` needs to be accepted as the first argument.
             ret.append(x)
         return ret
 
-Since the data preperations need to persist data across runs, this is one of the places
+Since the data preparations need to persist data across runs, this is one of the places
 in umbra that we need to use the `hub` which has been given to us by `pop`.
 
-The `hub` is a namespaced higherarchy used to store plugin references and variables.
+The `hub` is a namespaced hierarchy used to store plugin references and variables.
 The `hub` makes it easy to persist data in a clean way across the entire application.
-In this case we use the `hub.P` dict that has already been prepard for you. Under
+In this case we use the `hub.P` dict that has already been prepared for you. Under
 hub.P there is a dict for the pipe we are running in, and this is the place to store
 data about this pipe.
 
@@ -70,9 +70,9 @@ Refine Function
 ===============
 
 After creating the `prepare` function the `refine` coroutine is also required. The `refine`
-coroutine function is the oposite as the `prepare` coroutine function. It takes the data
+coroutine function is the opposite as the `prepare` coroutine function. It takes the data
 emitted by the model and reconstitutes it back into the same type of data that was originally
-recived. This makes it easy to pipeline data in and out.
+received. This makes it easy to pipeline data in and out.
 
 Here is the `refine` function that goes along with this `prepare function`:
 
@@ -95,5 +95,5 @@ Here is the `refine` function that goes along with this `prepare function`:
         return rets
 
 The refine function takes the pipe, data and predictions. The predictions are the numbers that
-map to the dataset. So now we can just go over the dataset, line up the outliers and resore the
+map to the dataset. So now we can just go over the dataset, line up the outliers and restore the
 data to what it was originally.
