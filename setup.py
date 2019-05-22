@@ -50,7 +50,7 @@ def discover_packages():
 setup(name=NAME,
       author='Thomas S Hatch',
       author_email='thatch@saltstack.com',
-      url='saltstack.com',
+      url='https://saltstack.com',
       version=VERSION,
       description=DESC,
       classifiers=[
