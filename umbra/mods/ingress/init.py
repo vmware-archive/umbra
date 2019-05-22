@@ -9,7 +9,6 @@ async def run(hub, ingress):
     '''
     for mod, conf in ingress.items():
         for pipe in conf:
-            print(pipe)
             if pipe not in hub.UP:
                 hub.UP[pipe] = {}
                 hub.UP[pipe]['in'] = asyncio.Queue()
