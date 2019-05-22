@@ -42,10 +42,11 @@ def beacon(config):
     ret = []
     procs = set()
     for proc in psutil.process_iter():
-        _name = proc.name()
-        if _name.startswith('[') and _name.endswith(']'):
+        name = proc.name()
+        # These rotating kworkers polute the dataset
+        if name.startswith('kworker/'):
             continue
-        procs.add(_name)
+        procs.add(name)
     for name in procs:
         ret.append({'name': name})
     return ret
