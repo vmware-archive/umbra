@@ -34,4 +34,4 @@ The goal of Umbra and Salt is to make extra use of the beacon system in Salt. Ta
 to review what beacons are currently in Salt, and consider what other beacons you could build that
 will integrate with Umbra. Remember that adding beacons to Salt is very easy and Umbra is built to
 automatically format and manage the data being sent back from beacons making it easy to
-apply AI/ML to virtually and situation.
+apply AI/ML to virtually any situation.
