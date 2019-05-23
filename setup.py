@@ -9,6 +9,7 @@ import shutil
 from distutils.core import setup, Command
 
 NAME = 'umbra'
+PNAME = 'penumbra'
 DESC = ('A system for making the use of AI easily plugged into interfaces')
 
 # Version info -- read without importing
@@ -47,7 +48,7 @@ def discover_packages():
     return modules
 
 
-setup(name=NAME,
+setup(name=PNAME,
       author='Thomas S Hatch',
       author_email='thatch@saltstack.com',
       url='https://saltstack.com',
