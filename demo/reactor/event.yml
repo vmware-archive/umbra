@@ -1,0 +1,10 @@
+allproc:
+  ingress:
+    salt_event: 'salt/beacon/*/allproc*'
+  data: salt_event
+  model: hbos
+  egress:
+    - cli
+    - salt_event
+  train_for: 10000
+  enabled: 1
