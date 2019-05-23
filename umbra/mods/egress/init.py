@@ -12,10 +12,13 @@ async def flow(hub, pipe, conf):
     '''
     e_mod = conf['egress']
     d_mod = conf['data']
+    if not isinstance(e_mod, list):
+        e_mod = [e_mod]
     while True:
         w_preds = await hub.UP[pipe]['egress'].get()
         data = await hub.tools.ref.last(f'data.{d_mod}.refine')(
             pipe,
             w_preds['data'],
             w_preds['preds'])
-        await hub.tools.ref.last(f'egress.{e_mod}.run')(pipe, data)
+        for mod in e_mod:
+            await hub.tools.ref.last(f'egress.{mod}.run')(pipe, data)
