@@ -15,7 +15,7 @@ To get started with Umbra, first install the application:
 
 .. code-block:: bash
 
-    pip install umbra
+    pip install penumbra
 
 Remember, umbra requires python 3.6 or later to run!
 
