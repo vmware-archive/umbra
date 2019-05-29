@@ -1,5 +1,5 @@
 '''
-Take dataset X and run it through the knn algorithm
+Take dataset X and run it through the lof algorithm
 '''
 
 # Import third party libs
@@ -21,7 +21,7 @@ def make_mlo(hub, data, train):
 
 async def run(hub, pipe, data, train):
     '''
-    Run the hbos algorithm on the given dataset
+    Run the lof algorithm on the given dataset
     '''
     if pipe not in hub.models.lof.COMPS:
         hub.models.lof.COMPS[pipe] = {'mlo': hub.models.lof.make_mlo(data, train)}

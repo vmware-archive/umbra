@@ -33,6 +33,7 @@ def load(hub):
         with open(full, 'r') as rfh:
             data = yaml.safe_load(rfh.read())
             flows[full] = data
+    #TODO: FIx this namespace to be hub.flows
     hub.umbra.INGRESS, hub.umbra.FLOWS = hub.flows.init.merge(flows)
 
 
