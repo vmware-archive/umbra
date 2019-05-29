@@ -22,7 +22,7 @@ copyright = '2019, Thomas S Hatch'
 author = 'Thomas S Hatch'
 
 # The full version, including alpha/beta/rc tags
-release = '1.2.0'
+release = '1.3.0'
 
 
 # -- General configuration ---------------------------------------------------
