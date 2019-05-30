@@ -16,7 +16,7 @@ def make_mlo(hub, data, train):
     '''
     Create the Machine Learning Object used for this sequence
     '''
-    return LOF(contamination=0.001)
+    return LOF(contamination=0.01)
 
 
 async def run(hub, pipe, data, train):
@@ -30,8 +30,8 @@ async def run(hub, pipe, data, train):
         print(f'Training {len(train)} datasets')
         mlo.fit(train)
     if data:
-        print(f'Fitting {len(data)} datasets')
-        mlo.fit(data)
         print(f'Predicting {len(data)} datasets')
-        return mlo.predict(data)
+        ret = mlo.predict(data)
+        scores = mlo.decision_function(data)
+        return ret
     return []

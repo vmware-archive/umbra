@@ -34,7 +34,7 @@ async def flow(hub, pipe, config):
                         left -= 1
                     else:
                         break
-        if data and len(data) < 10:
+        if data and len(data) < config.get('group_size', 10):
             continue
         if train and len(train) < config.get('train_for'):
             if not len(train) % 100:
