@@ -19,7 +19,7 @@ async def run(hub, ingress):
 
 
 async def flow(hub, mod, conf):
-    ret = hub.tools.ref.last(f'ingress.{mod}.run')(conf)
+    ret = getattr(hub, f'ingress.{mod}.run')(conf)
     if asyncio.iscoroutine(ret):
         ret = await ret
         await hub.ingress.init.que(ret)

@@ -6,7 +6,7 @@ import os
 import sys
 import shutil
 
-from distutils.core import setup, Command
+from setuptools import setup, Command
 
 NAME = 'umbra'
 PNAME = 'penumbra'
@@ -61,7 +61,11 @@ setup(name=PNAME,
           'Programming Language :: Python :: 3.7',
           'Development Status :: 5 - Production/Stable',
           ],
-      scripts=['scripts/umbra'],
+      entry_points={
+          'console_scripts': [
+              'umbra = umbra.scripts:start',
+              ],
+          },
       packages=discover_packages(),
       cmdclass={'clean': Clean},
       )

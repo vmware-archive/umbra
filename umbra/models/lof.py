@@ -8,7 +8,7 @@ from pyod.models.lof import LOF
 __virtualname__ = 'lof'
 
 
-def __mod_init__(hub):
+def __init__(hub):
     hub.models.lof.COMPS = {}
 
 

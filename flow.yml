@@ -9,6 +9,6 @@ net:
     ingress:
         salt_event: 'salt/sh*'
     data: salt_event
-    model: k_means
+    model: lof
     egress: salt_event
-    train_for: 5000
+    train_for: 10000

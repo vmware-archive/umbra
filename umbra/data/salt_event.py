@@ -16,7 +16,7 @@ async def prepare(hub, pipe, inbound):
         if not hub.P[pipe]['tmap_populated']:
             for key in event['data']:
                 if not isinstance(event['data'][key], str):
-                    # TODO: Make this able to handle mroe than just strings
+                    # TODO: Make this able to handle more than just strings
                     continue
                 if key == '_stamp':
                     continue

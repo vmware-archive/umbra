@@ -16,9 +16,9 @@ async def flow(hub, pipe, conf):
         e_mod = [e_mod]
     while True:
         w_preds = await hub.UP[pipe]['egress'].get()
-        data = await hub.tools.ref.last(f'data.{d_mod}.refine')(
+        data = await getattr(hub, f'data.{d_mod}.refine')(
             pipe,
             w_preds['data'],
             w_preds['preds'])
         for mod in e_mod:
-            await hub.tools.ref.last(f'egress.{mod}.run')(pipe, data)
+            await getattr(hub, f'egress.{mod}.run')(pipe, data)

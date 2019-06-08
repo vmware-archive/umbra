@@ -1,6 +1,0 @@
-#!/usr/bin/env python3
-
-import pop.hub
-
-hub = pop.hub.Hub()
-hub.tools.sub.add('umbra', pypath='umbra.mods.umbra', init=True)

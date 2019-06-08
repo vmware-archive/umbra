@@ -11,7 +11,7 @@ import asyncio
 # hub.UP[pipe][egress]
 
 
-def new(hub):
+def __init__(hub):
     hub.tools.conf.integrate(['umbra'], loader='yaml', cli='umbra', roots=True)
     hub.UP = {}
     hub.P = {}
@@ -21,12 +21,12 @@ def new(hub):
 
 
 def load_subs(hub):
-    hub.tools.sub.add('flows', pypath='umbra.mods.flows')
-    hub.tools.sub.add('persist', pypath='umbra.mods.persist')
-    hub.tools.sub.add('ingress', pypath='umbra.mods.ingress')
-    hub.tools.sub.add('data', pypath='umbra.mods.data')
-    hub.tools.sub.add('models', pypath='umbra.mods.models')
-    hub.tools.sub.add('egress', pypath='umbra.mods.egress')
+    hub.tools.sub.add(pypath='umbra.flows')
+    hub.tools.sub.add(pypath='umbra.persist')
+    hub.tools.sub.add(pypath='umbra.ingress')
+    hub.tools.sub.add(pypath='umbra.data')
+    hub.tools.sub.add(pypath='umbra.models')
+    hub.tools.sub.add(pypath='umbra.egress')
 
 
 def start(hub):
