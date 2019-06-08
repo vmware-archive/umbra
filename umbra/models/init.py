@@ -17,7 +17,6 @@ async def flow(hub, pipe, config):
     print(f'Starting model: {mod}')
     data = []
     train = []
-    print(f'PIPE {pipe} at models')
     while True:
         data.extend(await hub.UP[pipe]['model'].get())
         if hub.P[pipe]['first']:

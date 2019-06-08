@@ -20,7 +20,6 @@ async def flow(hub, pipe, config):
             'tmap_populated': False,
             'first': False}
     # TODO: Make the flow stop if the ingress gets exhausted
-    print(f'PIPE {pipe} at data')
     while True:
         data = await hub.UP[pipe]['data'].get()
         cond = await hub.tools.ref.last(f'data.{mod}.prepare')(pipe, data)
