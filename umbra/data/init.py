@@ -22,7 +22,7 @@ async def flow(hub, pipe, config):
     # TODO: Make the flow stop if the ingress gets exhausted
     while True:
         data = await hub.UP[pipe]['data'].get()
-        cond = await hub.tools.ref.last(f'data.{mod}.prepare')(pipe, data)
+        cond = await getattr(hub, f'data.{mod}.prepare')(pipe, data)
         await hub.UP[pipe]['model'].put(cond)
 
 
