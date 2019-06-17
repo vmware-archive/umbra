@@ -10,7 +10,7 @@ def __init__(hub):
     hub.models.knn.COMPS = {}
 
 
-async def run(hub, pipe, data, train):
+async def run(hub, config, pipe, data, train):
     '''
     Run the knn algorith on the given dataset
     '''

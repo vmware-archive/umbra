@@ -19,7 +19,7 @@ def make_mlo(hub, data, train):
     return LOF(contamination=0.01)
 
 
-async def run(hub, pipe, data, train):
+async def run(hub, config, pipe, data, train):
     '''
     Run the lof algorithm on the given dataset
     '''

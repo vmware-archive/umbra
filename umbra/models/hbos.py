@@ -19,7 +19,7 @@ def make_mlo(hub, data, train):
     return HBOS(contamination=0.001)
 
 
-async def run(hub, pipe, data, train):
+async def run(hub, config, pipe, data, train):
     '''
     Run the hbos algorithm on the given dataset
     '''
