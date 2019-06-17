@@ -8,7 +8,7 @@ from pyod.models.auto_encoder import AutoEncoder
 __virtualname__ = 'auto_encoder'
 
 
-def __mod_init__(hub):
+def __init__(hub):
     hub.models.auto_encoder.COMPS = {}
 
 

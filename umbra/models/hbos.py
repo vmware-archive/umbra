@@ -8,7 +8,7 @@ from pyod.models.hbos import HBOS
 __virtualname__ = 'hbos'
 
 
-def __mod_init__(hub):
+def __init__(hub):
     hub.models.hbos.COMPS = {}
 
 

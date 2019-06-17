@@ -8,7 +8,7 @@ from pyod.models.lscp import LSCP
 __virtualname__ = 'lscp'
 
 
-def __mod_init__(hub):
+def __init__(hub):
     hub.models.lscp.COMPS = {}
 
 
