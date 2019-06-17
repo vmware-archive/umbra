@@ -8,7 +8,7 @@ from pyod.models.lscp import LSCP
 __virtualname__ = 'lscp'
 
 
-def __mod_init__(hub):
+def __init__(hub):
     hub.models.lscp.COMPS = {}
 
 
@@ -19,7 +19,7 @@ def make_mlo(hub, data, train):
     return LSCP(contamination=0.001)
 
 
-async def run(hub, pipe, data, train):
+async def run(hub, config, pipe, data, train):
     '''
     Run the lscp algorithm on the given dataset
     '''

@@ -44,10 +44,9 @@ async def refine(hub, pipe, data, preds):
     dmap = hub.P[pipe]
     rets = []
     for ind in range(len(preds)):
-        if not preds[ind]:
-            continue
         ret = {}
         for t_ind in range(len(dmap['tmap'])):
             ret[dmap['tmap'][t_ind]] = dmap['r_words'][data[ind][t_ind]]
+        ret['pred'] = preds[ind]
         rets.append(ret)
     return rets

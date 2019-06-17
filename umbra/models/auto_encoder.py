@@ -8,7 +8,7 @@ from pyod.models.auto_encoder import AutoEncoder
 __virtualname__ = 'auto_encoder'
 
 
-def __mod_init__(hub):
+def __init__(hub):
     hub.models.auto_encoder.COMPS = {}
 
 
@@ -27,7 +27,7 @@ def make_mlo(hub, data, train):
     return AutoEncoder(hidden_neurons=hidden_neurons, contamination=0.001)
 
 
-async def run(hub, pipe, data, train):
+async def run(hub, config, pipe, data, train):
     '''
     Run the auto_encoder algorithm on the given dataset
     '''

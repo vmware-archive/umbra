@@ -6,11 +6,11 @@ Take dataset X and run it through the knn algorithm
 from pyod.models.knn import KNN
 
 
-def __mod_init__(hub):
+def __init__(hub):
     hub.models.knn.COMPS = {}
 
 
-async def run(hub, pipe, data, train):
+async def run(hub, config, pipe, data, train):
     '''
     Run the knn algorith on the given dataset
     '''

@@ -8,7 +8,7 @@ from pyod.models.hbos import HBOS
 __virtualname__ = 'hbos'
 
 
-def __mod_init__(hub):
+def __init__(hub):
     hub.models.hbos.COMPS = {}
 
 
@@ -19,7 +19,7 @@ def make_mlo(hub, data, train):
     return HBOS(contamination=0.001)
 
 
-async def run(hub, pipe, data, train):
+async def run(hub, config, pipe, data, train):
     '''
     Run the hbos algorithm on the given dataset
     '''
