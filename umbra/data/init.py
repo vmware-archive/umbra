@@ -3,7 +3,7 @@ async def run(hub, flows):
     Take the flows that we want to run and start monitoring the respective data pipelines
     '''
     for pipe in flows:
-        hub.tools.loop.ensure_future('data.init.flow', pipe, flows[pipe])
+        hub.pop.loop.ensure_future('data.init.flow', pipe, flows[pipe])
 
 
 async def flow(hub, pipe, config):

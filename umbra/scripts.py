@@ -3,4 +3,4 @@ import pop.hub
 
 def start():
     hub = pop.hub.Hub()
-    hub.tools.sub.add(pypath='umbra.umbra')
+    hub.pop.sub.add(pypath='umbra.umbra')

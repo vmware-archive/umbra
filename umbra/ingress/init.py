@@ -15,7 +15,7 @@ async def run(hub, ingress):
                 hub.UP[pipe]['data'] = asyncio.Queue()
                 hub.UP[pipe]['model'] = asyncio.Queue()
                 hub.UP[pipe]['egress'] = asyncio.Queue()
-        hub.tools.loop.ensure_future('ingress.init.flow', mod, conf)
+        hub.pop.loop.ensure_future('ingress.init.flow', mod, conf)
 
 
 async def flow(hub, mod, conf):

@@ -12,7 +12,7 @@ import asyncio
 
 
 def __init__(hub):
-    hub.tools.conf.integrate(['umbra'], loader='yaml', cli='umbra', roots=True)
+    hub.pop.conf.integrate(['umbra'], loader='yaml', cli='umbra', roots=True)
     hub.UP = {}
     hub.P = {}
     hub.umbra.init.load_subs()
@@ -21,19 +21,19 @@ def __init__(hub):
 
 
 def load_subs(hub):
-    hub.tools.sub.add(pypath='umbra.flows')
-    hub.tools.sub.add(pypath='umbra.persist')
-    hub.tools.sub.add(pypath='umbra.ingress')
-    hub.tools.sub.add(pypath='umbra.data')
-    hub.tools.sub.add(pypath='umbra.models')
-    hub.tools.sub.add(pypath='umbra.egress')
+    hub.pop.sub.add(pypath='umbra.flows')
+    hub.pop.sub.add(pypath='umbra.persist')
+    hub.pop.sub.add(pypath='umbra.ingress')
+    hub.pop.sub.add(pypath='umbra.data')
+    hub.pop.sub.add(pypath='umbra.models')
+    hub.pop.sub.add(pypath='umbra.egress')
 
 
 def start(hub):
     '''
     Fire up the async loop and add the first coroutine
     '''
-    hub.tools.loop.start(
+    hub.pop.loop.start(
         hub.umbra.init.run(),
         hold=True)
 
