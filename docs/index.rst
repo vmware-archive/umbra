@@ -8,10 +8,11 @@ Welcome to Umbra's documentation!
 
 .. toctree::
    :maxdepth: 2
+   :glob:
 
    topics/quickstart
    topics/salt
-   topics/flow
+   topics/flows
    topics/ingress
    topics/data
    topics/models
